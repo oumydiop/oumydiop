@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enregistrer une absence</title>
+</head>
+<body>
+    <h1>Enregistrer une absence</h1>
+    <form action="{% url 'enregistrer_absence' %}" method="POST">
+        {% csrf_token %}
+        <label for="etudiant">Étudiant :</label>
+        <select name="etudiant" id="etudiant">
+            {% for etudiant in etudiants %}
+                <option value="{{ etudiant.id }}">{{ etudiant }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="cours">Cours :</label>
+        <select name="cours" id="cours">
+            {% for cours in cours %}
+                <option value="{{ cours.id }}">{{ cours }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="justifiee">Absence justifiée :</label>
+        <input type="checkbox" name="justifiee" id="justifiee"><br>
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>

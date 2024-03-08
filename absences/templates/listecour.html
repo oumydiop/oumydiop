@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des cours</title>
+</head>
+<body>
+    <h1>Liste des cours</h1>
+    <ul>
+        {% for cours in cours %}
+            <li>{{ cours }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
